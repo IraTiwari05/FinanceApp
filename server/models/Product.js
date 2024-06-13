@@ -1,8 +1,7 @@
 
 import mongoose from "mongoose";
 import { loadType } from "mongoose-currency";
-//name
-//name
+
 const Schema = mongoose.Schema;
 loadType(mongoose);
 
