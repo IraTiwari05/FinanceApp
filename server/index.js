@@ -37,17 +37,11 @@ app.use("/transaction",transactionRoutes)
 const PORT = process.env.PORT || 10000;
 mongoose
   .connect(process.env.MONGO_URL
-    //useNewUrlParser: true,
-    //useUnifiedTopology: true,
   )
   .then(async () => {
     app.listen(PORT, () => console.log(`Server port: ${PORT}`));
 
-    // Optionally add data once or as needed
-    //await mongoose.connection.db.dropDatabase();
-     //await KPI.insertMany(convertedKpis);
-    //Product.insertMany(products);
-    //Transaction.insertMany(transactions);
+    
   })
   .catch((error) => console.log(`${error} did not connect`));
 
