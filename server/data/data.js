@@ -1,6 +1,6 @@
 export function convertCurrencyToNumber(currencyString) {
   if (typeof currencyString === 'string' && currencyString.startsWith('$')) {
-    // Remove '$' and ',' and convert to number
+
     const valueWithoutCurrency = currencyString.replace(/[,$]/g, '');
     return parseFloat(valueWithoutCurrency) * 100; // Convert dollars to cents
   }
