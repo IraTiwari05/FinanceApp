@@ -3,7 +3,7 @@ import { loadType } from "mongoose-currency";
 
 const Schema = mongoose.Schema;
 loadType(mongoose);
-
+//Apple
 const TransactionSchema = new Schema(
   {
     buyer: {
@@ -25,5 +25,5 @@ const TransactionSchema = new Schema(
 );
 
 const Transaction = mongoose.model("Transaction", TransactionSchema);
-//gill
+
 export default Transaction;
