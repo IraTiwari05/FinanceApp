@@ -6,7 +6,7 @@ import { useTheme } from '@emotion/react';
 import BoxHeader from '../../components/BoxHeader';
 
 
-const Row1 = (props: Props) => {
+const Row1 = () => {
   const theme: any = useTheme();
   const palette = theme.palette;
   const { data } = useGetKpisQuery();

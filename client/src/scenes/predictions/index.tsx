@@ -6,11 +6,12 @@ import { FlexBetween } from "../../components/FlexBetween";
 import { Box, Typography,Button } from "@mui/material";
 import { CartesianGrid, Tooltip ,Legend, Line, LineChart, ResponsiveContainer, XAxis, Label } from "recharts";
 import { YAxis } from "recharts";
-import regression, { DataPoint } from "regression";
+import  { DataPoint } from "regression";
 
 
 const Predictions=()=>{
-    const {palette}=useTheme();
+  const theme: any = useTheme();
+  const palette=theme.palette;
     const [isPredictions, setIsPredictions]=useState(false);
     const {data:kpiData}=useGetKpisQuery();
  

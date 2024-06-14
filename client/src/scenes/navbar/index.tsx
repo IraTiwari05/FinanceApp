@@ -5,9 +5,7 @@ import  {Link} from 'react-router-dom';
 import {Box,Typography,useTheme} from "@mui/material";
 
 
-type Props=object;
-
-const Navbar=(props: Props)=>{
+const Navbar=()=>{
     const {palette}= useTheme();
     const [selected, setSelected] = useState("dashboard");
     return <FlexBetween 
