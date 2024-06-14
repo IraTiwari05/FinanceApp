@@ -9,7 +9,7 @@ export default defineConfig({
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
   server: {
-    port: Number(process.env.PORT) || 3000, // Ensure PORT is parsed as a number
+    port: Number(process.env.PORT) || 1337, // Ensure PORT is parsed as a number
   },
   define: {
     'process.env': process.env,
