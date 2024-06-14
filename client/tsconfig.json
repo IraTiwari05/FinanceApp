@@ -17,5 +17,5 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "server.ts"]
 }
