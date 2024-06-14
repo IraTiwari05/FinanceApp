@@ -10,7 +10,7 @@ import Predictions from "./scenes/predictions";
 function App() {
     const theme=useMemo(()=> createTheme(themeSettings),[]);
    
-    
+
   return (
     <div className="app">
       <BrowserRouter>
