@@ -6,7 +6,9 @@ import { FlexBetween } from "../../components/FlexBetween";
 import { Box, Typography,Button } from "@mui/material";
 import { CartesianGrid, Tooltip ,Legend, Line, LineChart, ResponsiveContainer, XAxis, Label } from "recharts";
 import { YAxis } from "recharts";
-import  { DataPoint } from "regression";
+import { DataPoint } from "regression";
+import * as regression from 'regression';
+
 
 
 const Predictions=()=>{

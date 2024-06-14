@@ -10,7 +10,9 @@ type Props={
 };
 
 const BoxHeader=({icon,title,sideText} :Props)=>{
-    const {palette}=useTheme();
+
+  const theme: any = useTheme();
+  const palette=theme.palette;
 
     return(
     <FlexBetween color={palette.grey[400] }
