@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - name: client
+    env: .env.local
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    routes:
+      - src: /*
+        dest: /index.html
+    envVars:
+      - key: PORT
+        value: 1337
