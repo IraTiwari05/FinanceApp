@@ -11,6 +11,9 @@ export default defineConfig({
   server: {
     port: Number(process.env.PORT) || 1337, // Ensure PORT is parsed as a number
   },
+  preview: {
+    port: Number(process.env.PORT) || 1337,
+  },
   define: {
     'process.env': process.env,
   },
