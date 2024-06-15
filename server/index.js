@@ -62,6 +62,9 @@ app.use('/api/kpi', kpiRoutes);
 app.use('/api/product', productRoutes);
 app.use('/api/transaction', transactionRoutes);
 
+app.get('/', (_req, res) => {
+  res.send('Welcome to my API');
+});
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
