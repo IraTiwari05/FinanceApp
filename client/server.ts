@@ -1,14 +1,14 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import path from 'path';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 1337;
 
-// Serve the static files from the React app
+// Serve static files from the "dist" directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Handles any requests that don't match the ones above
-app.get('*', (_req: Request, res: Response) => {
+// Serve index.html for any other route to support client-side routing
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
