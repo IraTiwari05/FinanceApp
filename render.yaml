@@ -1,17 +1,11 @@
 services:
   - type: web
-    name: financeapp-client
-    env: node
-    buildCommand: npm install && npm run build
-    startCommand: node dist/server.js
-    envVars:
-      - key: VITE_BASE_URL
-        value: https://financeapp-20.onrender.com
-  - type: web
     name: financeapp-server
     env: node
-    buildCommand: npm install 
+    buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: PORT
         value: 1337
+      - key: MONGO_URL
+        value: "mongodb+srv://iratiwari2003:Heramb2010@cluster0.bql0cjk.mongodb.net/your-database-name?retryWrites=true&w=majority&appName=Cluster0"
