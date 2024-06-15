@@ -1,5 +1,3 @@
-// index.js
-
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -7,7 +5,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import kpiRoutes from './routes/kpi.js';
@@ -36,14 +33,12 @@ app.use(cors()); // CORS Middleware
 
 // Connect to MongoDB
 mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // Remove deprecated options
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
 }).then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => console.log(`${error} did not connect`));
-
-// Serve static files from the "dist" directory
-app.use(express.static(path.join(__dirname, 'dist')));
 
 // Example API endpoint
 app.get('/api/data', (_req, res) => {
@@ -55,11 +50,6 @@ app.get('/api/data', (_req, res) => {
 app.use('/api/kpi', kpiRoutes);
 app.use('/api/product', productRoutes);
 app.use('/api/transaction', transactionRoutes);
-
-// Serve index.html for any other route to support client-side routing
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
 
 // Start the server
 app.listen(port, () => {
