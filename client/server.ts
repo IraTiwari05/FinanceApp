@@ -1,21 +1,17 @@
-// server.ts
-import express from 'express';
+import express, { Request, Response } from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 const app = express();
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 3000;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+// Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('*', (req, res) => {
+// Handles any requests that don't match the ones above
+app.get('*', (_req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(Number(port), () => {
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
