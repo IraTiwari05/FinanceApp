@@ -1,18 +1,17 @@
 services:
   - type: web
     name: financeapp-client
-    env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_BASE_URL
-        value: https://financeapp-6.onrender.com
-
-  - type: web
-    name: financeapp-server
     env: node
     buildCommand: npm install && npm run build
     startCommand: node dist/server.js
+    envVars:
+      - key: VITE_BASE_URL
+        value: https://financeapp-6.onrender.com
+  - type: web
+    name: financeapp-server
+    env: node
+    buildCommand: npm install 
+    startCommand: npm start
     envVars:
       - key: PORT
         value: 1337
