@@ -29,7 +29,18 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors()); // CORS Middleware
+const allowedOrigins = ['https://financeapp-20.onrender.com', 'http://localhost:1337']; // Adjust as necessary
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+app.use(cors(corsOptions));
+
 
 // Connect to MongoDB
 mongoose.connect(mongoURI, {
