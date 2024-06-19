@@ -3,7 +3,7 @@ services:
     name: financeapp-server
     env: node
     buildCommand: cd server && npm install
-    startCommand: cd server && npm start
+    startCommand: cd server && npm run dev
     envVars:
       - key: PORT
         value: 1337
